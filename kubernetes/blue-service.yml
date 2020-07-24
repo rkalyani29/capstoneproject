@@ -1,0 +1,14 @@
+---
+kind: Service
+apiVersion: v1
+metadata:
+    name: bluegreenLB
+    labels:
+        app: bluegreenLB
+spec:
+    ports:
+        - port: 8000
+          targetPort: 80
+    selector:
+        app: bluectl
+    type: LoadBalancer
