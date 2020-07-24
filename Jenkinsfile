@@ -60,7 +60,7 @@ pipeline {
 			}
 		}
 
-		stage('Create Service Pointing to Blue Controller') {
+		stage('Blue Deployment Service') {
 			steps {
 				withAWS(region:'us-west-2', credentials:'awscredentials') {
 					sh '''
@@ -70,7 +70,7 @@ pipeline {
 			}
 		}
 
-		stage('Ready for Redirection') {
+		stage('Redirection') {
             steps {
                 input "Proceed?"
             }
