@@ -80,7 +80,7 @@ pipeline {
 			steps {
 				withAWS(region:'us-west-2', credentials:'awscredentials') {
 					sh '''
-						kubectl apply -f ./kubernetes-resources/green-service.yml
+						kubectl apply -f ./kubernetes/green-service.yml
 					'''
 				}
 			}
