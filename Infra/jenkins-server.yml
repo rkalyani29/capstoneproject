@@ -93,7 +93,7 @@ Resources:
     ## Security Group ##
 
     # Security Group for Jenkins Server
-    JenkinsSecurityGroup:
+    JenkinsSG:
         Type: AWS::EC2::SecurityGroup
         Properties:
             GroupDescription: Allow http to our hosts and SSH from local only
@@ -120,7 +120,7 @@ Resources:
             UserData:
                 Fn::Base64: !Sub |
                     #!/bin/bash
-                    # Install Jenkins
+                    # Installing  Jenkins
                     apt-get update -y
                     apt install -y default-jdk
                     wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | apt-key add -
@@ -128,7 +128,7 @@ Resources:
                     apt-get update -y
                     apt-get install -y jenkins
                     systemctl start jenkins
-                    # Install Docker
+                    # Installing Docker
                     apt-get update -y
                     apt-get install -y apt-transport-https ca-certificates curl gnupg-agent software-properties-common
                     curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
@@ -150,13 +150,13 @@ Resources:
                     # Install Tidy
                     apt-get update -y
                     apt-get install -y tidy
-                    # Add jenkins user tp docker group
+                    # Add jenkins user to docker
                     usermod -aG docker jenkins
                     # Restart Jenkins
                     systemctl restart jenkins
-            ImageId: !Ref AMIId
+            ImageId: !Ref AMI
             SecurityGroups:
-                - Ref: JenkinsSecurityGroup
+                - Ref: JenkinsSG
             InstanceType: !Ref InstanceType
             KeyName: jenkins
 

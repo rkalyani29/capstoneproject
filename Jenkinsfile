@@ -72,7 +72,7 @@ pipeline {
 
 		stage('Ready for Redirection') {
             steps {
-                input "Approve?"
+                input "Proceed?"
             }
         }
 

@@ -7,18 +7,18 @@ pipeline {
 				withAWS(region:'us-west-2', credentials:'awscredentials') {
 					sh '''
 						eksctl create cluster \
-						--name udacitycluster \
+						--name capstonecluster \
 						--version 1.14 \
-						--nodegroup-name standard-workers \
+						--nodegroup-name ng \
 						--node-type t2.small \
 						--nodes 2 \
 						--nodes-min 1 \
 						--nodes-max 3 \
 						--node-ami auto \
-						--region us-west-1 \
-						--zones us-west-1a \
-						--zones us-west-1b \
-						--zones us-west-1c \
+						--region us-west-2 \
+						--zones us-west-2a \
+						--zones us-west-2b \
+						--zones us-west-2c \
 					'''
 				}
 			}

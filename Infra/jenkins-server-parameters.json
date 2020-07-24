@@ -4,7 +4,7 @@
         "ParameterValue": "Jenkins"
     },
     {
-        "ParameterKey": "AMIId",
+        "ParameterKey": "AMI",
         "ParameterValue": "ami-003634241a8fcdec0" 
     },
     {
