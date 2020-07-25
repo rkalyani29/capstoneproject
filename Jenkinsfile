@@ -40,7 +40,7 @@ pipeline {
 			}
 		}
 
-		stage('Blue Deployments') {
+		stage('Blue Deployment') {
 			steps {
 				withAWS(region:'us-west-2', credentials:'awscredentials') {
 					sh '''
@@ -50,7 +50,7 @@ pipeline {
 			}
 		}
 
-		stage('Green deployment') {
+		stage('Green Deployment') {
 			steps {
 				withAWS(region:'us-west-2', credentials:'awscredentials') {
 					sh '''
@@ -70,13 +70,9 @@ pipeline {
 			}
 		}
 
-		stage('Redirection') {
-            steps {
-                input "Proceed?"
-            }
-        }
 
-		stage('Green deployment service') {
+
+		stage('Green Deployment Service') {
 			steps {
 				withAWS(region:'us-west-2', credentials:'awscredentials') {
 					sh '''
