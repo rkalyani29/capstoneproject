@@ -16,7 +16,7 @@ spec:
         spec:
             containers:
                 - name: green
-                  image: RKalya29/CapstoneProject
+                  image: rkalya29/capstoneproject
                   ports:
                       - name: http
                         containerPort: 80
