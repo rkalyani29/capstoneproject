@@ -2,9 +2,9 @@
 kind: Service
 apiVersion: v1
 metadata:
-    name: bluegreenLB
+    name: bglb
     labels:
-        app: bluegreenLB
+        app: bglb
 spec:
     ports:
         - port: 8000
