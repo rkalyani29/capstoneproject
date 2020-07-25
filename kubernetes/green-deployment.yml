@@ -15,7 +15,7 @@ spec:
                 app: greenctl
         spec:
             containers:
-                - name: green
+                - name: greenctl
                   image: kalyani297/capstoneproject
                   ports:
                       - name: http
