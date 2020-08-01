@@ -70,7 +70,11 @@ pipeline {
 			}
 		}
 
-
+		stage('Wait for user approval') {
+            steps {
+                input "Ready to redirect traffic to green?"
+            }
+        }
 
 		stage('Green Deployment Service') {
 			steps {
