@@ -82,7 +82,7 @@ $ sh scripts/createstack.sh jenkins infra/jenkins-server.yml infra/jenkins-serve
 -   Apply and save the pipeline.
 -   `Build Now` to trigger the pipeline
 -   Once the pipeline is successful, go to Load Balancer page in AWS console and look for DNS name
--   Copy the DNS name `a25ba6e21d36311ea867406b0d65202e-797585048.us-west-2.elb.amazonaws.com`
+-   Copy the DNS name `a34758253d5c911ea9083023ecedf7ba-356950219.us-west-2.elb.amazonaws.com`
 -   In the browser, open a new tab and hit link as `http://<DNS_NAME>:8000/`. It will show the capstone project website as per the screenshot `My website`.
 
 
